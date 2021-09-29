@@ -32,10 +32,12 @@ export default function Sidebar() {
               </li>
             </Link>
 
+            <Link to="/contact" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Contact Us
               </li>
+              </Link>
            
           </ul>
         </div>

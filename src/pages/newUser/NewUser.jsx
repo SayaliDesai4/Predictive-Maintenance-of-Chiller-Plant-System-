@@ -12,29 +12,32 @@ export default function NewUser() {
       <form className="newUserForm">
         <div className="newUserItem">
           <label>Machine Name</label>
-          <input type="text" placeholder="Motor" />
+          <input type="text" placeholder="machine name" />
+          <div className="newUserItem">
+          <label>Image</label>
+          <input type="file" id="file" />
 
           <div className="newUserItem">
-          <label>Temperature(in degrees)</label>
-          <input type="text" placeholder="90" />
+          <label>Temperature</label>
+          <input type="text" placeholder="degrees" />
      
 
           <div className="newUserItem">
-          <label>Voltage(in volts)</label>
-          <input type="text" placeholder="90" />
+          <label>Voltage</label>
+          <input type="text" placeholder="volts" />
         </div>
 
         <div className="newUserItem">
-          <label>Pressure(in pascal)</label>
-            <input type="text" placeholder="220" />
+          <label>Pressure</label>
+            <input type="text" placeholder="pascal" />
 
             <div className="newUserItem">
-          <label>Current(in amperes)</label>
-            <input type="text" placeholder="220" />
+          <label>Current</label>
+            <input type="text" placeholder="amperes" />
 
             <div className="newUserItem">
-          <label>Viberations(in hertz)</label>
-            <input type="text" placeholder="15000" />
+          <label>Viberations</label>
+            <input type="text" placeholder="hertz" />
 
 <div className="newUserItem">
             <label>Status</label>
@@ -43,6 +46,7 @@ export default function NewUser() {
             <option value="no">Off</option>
           </select>
           <center><button className="newUserButton" onClick={add}>Add</button></center>
+        </div>
         </div>
         </div>
         </div>
