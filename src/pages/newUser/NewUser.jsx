@@ -1,58 +1,49 @@
 import "./newUser.css";
-
+import React, {useState} from "react";
+import Axios from 'axios';
 
 export default function NewUser() {
+  const[machineNameReg,setMachineNameReg]=useState('');
+  const[machineTemp,setMachineTemp]=useState('');
+  const[machineVolt,setMachineVoltage]=useState('');
   const add=()=>
   {
-    alert("Machine Added..")
-  }
+    Axios.post('http://localhost:3001/add',{
+      machinename: machineNameReg,
+    machinetemp: machineTemp,
+    machinevolt: machineVolt
+  }).then((response)=>{
+      console.log(response);
+   });
+    
+  };
+  
   return (
     <div className="newUser">
       <h1 className="newUserTitle">Machine</h1>
-      <form className="newUserForm">
+      <form className="newUserForm" action="/server/dbconnect">
         <div className="newUserItem">
           <label>Machine Name</label>
-          <input type="text" placeholder="machine name" />
-          <div className="newUserItem">
-          <label>Image</label>
-          <input type="file" id="file" />
+          <input type="text" placeholder="machine name" onChange={(e)=>{setMachineNameReg(e.target.value)} }/>
+          </div>
+         
 
           <div className="newUserItem">
           <label>Temperature</label>
-          <input type="text" placeholder="degrees" />
+          <input type="text" placeholder="degrees" onChange={(e)=>{setMachineTemp(e.target.value)}} />
+          </div>
      
 
           <div className="newUserItem">
           <label>Voltage</label>
-          <input type="text" placeholder="volts" />
+          <input type="text" placeholder="volts" onChange={(e)=>{setMachineVoltage(e.target.value)} } />
         </div>
 
-        <div className="newUserItem">
-          <label>Pressure</label>
-            <input type="text" placeholder="pascal" />
+       
 
-            <div className="newUserItem">
-          <label>Current</label>
-            <input type="text" placeholder="amperes" />
-
-            <div className="newUserItem">
-          <label>Viberations</label>
-            <input type="text" placeholder="hertz" />
-
-<div className="newUserItem">
-            <label>Status</label>
-          <select className="newUserSelect" name="active" id="active">
-            <option value="yes">On</option>
-            <option value="no">Off</option>
-          </select>
           <center><button className="newUserButton" onClick={add}>Add</button></center>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
+                
+        
         
       </form>
     </div>
