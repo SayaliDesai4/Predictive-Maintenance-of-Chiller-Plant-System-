@@ -8,7 +8,6 @@ import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import Contact from "./pages/contact/Contact";
 
-
 function App() {
   return (
     <Router>

@@ -27,13 +27,13 @@ export default function Contact()
             
         <div className="newUserItem">
       <label>Name</label>
-      <input type="text" name="user_name" placeholder="abc" />
+      <input type="text" name="user_name" placeholder="abc" required />
       <div className="newUserItem">
       <label>Email</label>
-      <input type="email" name="user_email" placeholder="abc@gmail.com"/>
+      <input type="email" name="user_email" placeholder="abc@gmail.com" required/>
       <div className="newUserItem">
       <label>Message</label>
-      <textarea name="message" placeholder="XYZ"/>
+      <textarea name="message" placeholder="XYZ" required/>
       <div className="newUserItem">
           <div classname = "newUserButton">
 <button type="submit" style={{backgroundColor:"#E0FFFF", cursor:"pointer", padding: "10px 25px", marginLeft: "320px"}}>SEND</button>
