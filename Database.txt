@@ -1,0 +1,9 @@
+Predictive Maintenance
+
+Database Machines
+
+Table: mac
+
+create table mac(macname varchar(20) not null, macimg longblob not null, mactemp int not null, macvolt int not null, macpres int not null, maccur int not null, macvibret int not null, macstat varchar(20) not null);
+
+insert into mac values(Motor','5212486552',50,50,50,50,50,'On');

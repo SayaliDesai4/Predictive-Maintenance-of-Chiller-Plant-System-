@@ -6,7 +6,7 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo" >Predictive Maintenance</span>
+          <span className="logo" >Predictive Maintenance of Chiller Plant System</span>
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ const macvibret=req.body.macvibret;
 const macstat=req.body.macstat;
 
   db.query(
-    "insert into Machines.mac(macname, macimg, mactemp, macvolt,macpres, maccur, macvibret,macstat) values (?,?,?,?,?,?,?,?)",
+    "insert into Machines.mac(macname, macimg, mactemp, macvolt, macpres, maccur, macvibret,macstat) values (?,?,?,?,?,?,?,?)",
     [macname, macimg, mactemp, macvolt,macpres, maccur,macvibret,macstat],
     (err,result)=>{
     console.log(err);
