@@ -37,8 +37,8 @@
 }
 
 .productInfoImg {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 20px;
@@ -76,7 +76,7 @@
 
 .productForm {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-evenly;
 }
 
 .productFormLeft {
@@ -85,6 +85,11 @@
 }
 
 .productFormLeft > label {
+  margin-bottom: 10px;
+  color: gray;
+}
+
+.productFormRight > label {
   margin-bottom: 10px;
   color: gray;
 }

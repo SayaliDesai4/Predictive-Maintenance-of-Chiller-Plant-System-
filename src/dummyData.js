@@ -1,16 +1,25 @@
 
   export const productData = [
+  
     {
-      name: "Jan",
-      "Sales": 4000,
+      name: "Temperature",
+      "Sales": 5,
     },
     {
-      name: "Feb",
-      "Sales": 3000,
+      name: "Voltage",
+      "Sales": 90,
     },
     {
-      name: "Mar",
-      "Sales": 5000,
+      name: "Current",
+      "Sales": 60,
+    },
+    {
+      name: "Pressure",
+      "Sales": 40,
+    },
+    {
+      name: "Vibration",
+      "Sales": 80,
     },
   ];
 

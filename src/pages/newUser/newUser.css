@@ -13,6 +13,7 @@
   flex-direction: column;
   margin-top: 10px;
   margin-right: 20px;
+  size: 50px;
 }
 
 .newUserItem > label {
