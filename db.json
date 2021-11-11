@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "macname": "Motor",
+      "macimg": "C:\\fakepath\\chillerplantimg.jpg",
+      "mactemp": "50",
+      "macvolt": "50",
+      "macpres": "50",
+      "maccur": "50",
+      "macvibret": "50",
+      "macstat": "On"
+    },
+    {
+      "macname": "Rotor",
+      "macimg": "C:\\fakepath\\chillerplantimg.jpg",
+      "mactemp": "52",
+      "macvolt": "85",
+      "macpres": "552",
+      "maccur": "52",
+      "macvibret": "41",
+      "macstat": "On",
+      "id": 2
+    },
+    {
+      "macname": "Turing",
+      "macimg": "C:\\fakepath\\Turing.jpg",
+      "mactemp": "50",
+      "macvolt": "100",
+      "macpres": "150",
+      "maccur": "120",
+      "macvibret": "100",
+      "macstat": "On",
+      "id": 3
+    },
+    {
+      "macname": "Spindle",
+      "macimg": "C:\\fakepath\\Spindle.jpg",
+      "mactemp": "52",
+      "macvolt": "100",
+      "macpres": "552",
+      "maccur": "120",
+      "macvibret": "100",
+      "macstat": "On",
+      "id": 4
+    }
+  ]
+}

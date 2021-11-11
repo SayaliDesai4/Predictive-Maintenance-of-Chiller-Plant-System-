@@ -4,7 +4,7 @@ export default function Home() {
   return (
     
     <div className="home">
-    
+  
     <div class="row">
   <div class="leftcolumn">
     <div class="card">

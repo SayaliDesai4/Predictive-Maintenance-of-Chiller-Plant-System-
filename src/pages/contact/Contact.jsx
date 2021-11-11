@@ -27,10 +27,10 @@ export default function Contact()
             
         <div className="newUserItem">
       <label>Name</label>
-      <input type="text" name="user_name" placeholder="abc" required />
+      <input style={{boxSizing:"content-box"}} type="text" name="user_name" placeholder="abc" required />
       <div className="newUserItem">
       <label>Email</label>
-      <input type="email" name="user_email" placeholder="abc@gmail.com" required/>
+      <input style={{boxSizing:"content-box"}} type="email" name="user_email" placeholder="abc@gmail.com" required/>
       <div className="newUserItem">
       <label>Message</label>
       <textarea name="message" placeholder="XYZ" required/>

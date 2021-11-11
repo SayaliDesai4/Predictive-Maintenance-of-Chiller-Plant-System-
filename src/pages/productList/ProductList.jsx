@@ -1,68 +1,54 @@
 import "./productList.css";
-import { DataGrid } from "@material-ui/data-grid";
-import { DeleteOutline } from "@material-ui/icons";
-import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 
-export default function ProductList() {
-  const [data, setData] = useState(productRows);
+const ProductList = () => {
+  const [users, setUser] = useState([]);
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+  useEffect(() => {
+    loadUsers();
+  }, []);
+
+  const loadUsers = async () => {
+    const result = await axios.get("http://localhost:3003/users");
+    setUser(result.data.reverse());
   };
 
-  const columns = [
-    { field: "id", headerName: "ID", width: 90 },
-    {
-      field: "product",
-      headerName: "Product",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="productListItem">
-            <img className="productListImg" src={params.row.img} alt="" />
-            {params.row.name}
-          </div>
-        );
-      },
-    },
-    
-    {
-      field: "status",
-      headerName: "Status",
-      width: 120,
-    },
-
-    {
-      field: "action",
-      headerName: "Action",
-      width: 150,
-      renderCell: (params) => {
-        return (
-          <>
-            <Link to={"/product/" + params.row.id}>
-              <button className="productListEdit">Show</button>
-            </Link>
-            <DeleteOutline
-              className="productListDelete"
-              onClick={() => handleDelete(params.row.id)}
-            />
-          </>
-        );
-      },
-    },
-  ];
-
   return (
-    <div className="productList">
-      <DataGrid
-        rows={data}
-        disableSelectionOnClick
-        columns={columns}
-        pageSize={8}
-        checkboxSelection
-      />
+    <div class="productList">
+    <div>
+      <div>
+        <h2>Machines</h2><br/>
+        <table id="macs">
+          
+            <tr>
+              <th style={{textAlign:"center"}}>ID</th>
+              <th style={{textAlign:"center"}}>Name</th>
+              <th style={{textAlign:"center"}}>Status</th>
+              <th style={{textAlign:"center"}}>Action</th>
+            </tr>
+          
+          <tbody>
+            {users.map((user, index) => (
+              <tr>
+                <td style={{textAlign:"center"}}>{index + 1}</td>
+                <td style={{textAlign:"center"}}>{user.macname}</td>
+                <td style={{textAlign:"center"}}>{user.macstat}</td>
+                <td style={{textAlign:"center"}}>
+                  <Link  to={`/users/${user.id}`}>
+                   <button> View</button>
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
+    </div>
+  
   );
-}
+};
+
+export default ProductList;

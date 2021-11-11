@@ -2,18 +2,45 @@
 import "./product.css";
 import Chart from "../../components/chart/Chart"
 import {productData} from "../../dummyData"
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-export default function Product() {
+const Product = () => {
+    const [user, setUser] = useState({
+      macname: "",
+      macimg: "",
+      mactemp: "",  
+      macvolt: "",
+      macpres: "",
+      maccur: "",
+      macvibret: "",
+      macstat: ""
+    });
+
+    const { id } = useParams();
+    useEffect(() => {
+      loadUser();
+    }, []);
+    const loadUser = async () => {
+      const res = await axios.get(`http://localhost:3003/users/${id}`);
+      setUser(res.data);
+    };
+
   return (
+    
     <div className="product">
       <div className="productTitleContainer">
-        <h1 className="productTitle">Machine Stage</h1>
-        
+        <h1 className="productTitle">Machine Stage</h1>        
       </div>
       <div className="productTop">
           <div className="productTopLeft">
-              <Chart data={productData} dataKey="Sales" title="Machine Performance"/>
+              <Chart data={productData} dataKey="Units" title="Machine Performance"/>
+
+}
+
           </div>
+
           <div className="productTopRight">
               <div className="productInfoTop">
                   <img src="https://th.bing.com/th/id/OIP.b44gEAehha7hq_XQfJYTPgHaEK?w=291&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="" className="productInfoImg" />
@@ -21,22 +48,21 @@ export default function Product() {
               <div className="productInfoBottom">
               <br></br>
                   <div className="productInfoItem">
+                  
                       <span className="productInfoKey">Machine Name:</span>
-                      <span className="productInfoValue">Turing</span>
+                      <span className="productInfoValue"><b>{user.macname}</b></span>
                   </div>
                   
                   <div className="productInfoItem">
                       <span className="productInfoKey">Status:</span>
-                      <span className="productInfoValue">On</span>
+                      <span className="productInfoValue"><b>{user.macstat}</b></span>
                   </div>
-                  
-                  <div className="productInfoItem">
-                      <span className="productInfoKey">Phase:</span>
-                      <span className="productInfoValue">Good</span>
-                  </div>
+                
               </div>
+              
           </div>
       </div>
+      
       <div className="productBottom">
           <form className="productForm">
               <div className="productFormLeft">
@@ -70,4 +96,6 @@ export default function Product() {
       </div>
     </div>
   );
-}
+};
+
+  export default  Product;

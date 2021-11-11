@@ -21,6 +21,7 @@ function App() {
           <Route path="/newUser">
             <NewUser />
           </Route>
+          <Route exact path="/users/:id" component={Product} />
           <Route path="/products">
             <ProductList />
           </Route>
