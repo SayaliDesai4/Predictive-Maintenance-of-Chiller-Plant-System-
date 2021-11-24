@@ -33,23 +33,23 @@
     },
     {
       name: "Temperature",
-      "Units": 100,
-    },
-    {
-      name: "Voltage",
-      "Units": 190,
-    },
-    {
-      name: "Current",
       "Units": 60,
     },
     {
+      name: "Voltage",
+      "Units": 80,
+    },
+    {
+      name: "Current",
+      "Units": 110,
+    },
+    {
       name: "Pressure",
-      "Units": 40,
+      "Units": 320,
     },
     {
       name: "Vibration",
-      "Units": 80,
+      "Units": 150,
     },
   ];
 
@@ -60,23 +60,23 @@
     },
     {
       name: "Temperature",
-      "Units": 500,
-    },
-    {
-      name: "Voltage",
-      "Units": 910,
-    },
-    {
-      name: "Current",
-      "Units": 60,
-    },
-    {
-      name: "Pressure",
       "Units": 40,
     },
     {
+      name: "Voltage",
+      "Units": 210,
+    },
+    {
+      name: "Current",
+      "Units": 150,
+    },
+    {
+      name: "Pressure",
+      "Units": 360,
+    },
+    {
       name: "Vibration",
-      "Units": 80,
+      "Units": 190,
     },
   ];
 

@@ -2,6 +2,8 @@
 import "./product.css";
 import Chart from "../../components/chart/Chart"
 import {productData} from "../../dummyData"
+import {productData1} from "../../dummyData"
+import {productData2} from "../../dummyData"
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -37,8 +39,6 @@ const Product = () => {
           <div className="productTopLeft">
               <Chart data={productData} dataKey="Units" title="Machine Performance"/>
 
-}
-
           </div>
 
           <div className="productTopRight">
@@ -48,7 +48,7 @@ const Product = () => {
               <div className="productInfoBottom">
               <br></br>
                   <div className="productInfoItem">
-                  
+                    
                       <span className="productInfoKey">Machine Name:</span>
                       <span className="productInfoValue"><b>{user.macname}</b></span>
                   </div>
@@ -67,7 +67,8 @@ const Product = () => {
           <form className="productForm">
               <div className="productFormLeft">
                   <label>Alerts</label>
-                  <button className="productButton">Dry Run Alert</button>
+                  <button className="but">Dry Run Alert</button>
+
                   &nbsp;
                   <button className="productButton">Leakage Alert</button>
                   &nbsp;
@@ -84,9 +85,9 @@ const Product = () => {
                   &nbsp;
                   <button className="productButton">Broken Rotor Bar Fault</button>
                   &nbsp;
-                  <button className="productButton">Cavitation Fault</button>
+                  <button className="but">Cavitation Fault</button>
                   &nbsp;
-                  <button className="productButton">Gear Fault</button>
+                  <button className="but">Gear Fault</button>
                   &nbsp;
                   <button className="productButton">Open Conductor Fault</button>
                   &nbsp;
